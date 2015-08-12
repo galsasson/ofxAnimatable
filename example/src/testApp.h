@@ -7,6 +7,11 @@
 #include "ofxAnimatableOfPoint.h"
 #include "ofxAnimatableOfColor.h"
 
+//#define TIME_SAMPLE
+#ifdef TIME_SAMPLE
+	#include "ofxTimeMeasurements.h"
+#endif
+
 
 class testApp : public ofBaseApp{
 
@@ -17,8 +22,7 @@ class testApp : public ofBaseApp{
 
 		void mousePressed(int x, int y, int button);
 
-		void drawPlot(int x, int y, int size, AnimCurve curve, string title);
-	
+		void drawPlot(int x, int y, int size, AnimCurve curve, string title, ofColor);
 	
 		float position;
 	
@@ -32,6 +36,11 @@ class testApp : public ofBaseApp{
 
 		float width;
 		float fr;
+
+		ofImage img;
+		float a,b,c,d;
+
+
 };
 
 #endif
